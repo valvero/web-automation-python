@@ -21,5 +21,13 @@ def demo():
 	else:
 		print("No, it wasn't found... We need to improve our SEO techniques")
 
-demo()
+def kbbHomePage():
+	global browser
+	url = "http://horriblesubs.info/"
+	browser.visit(url)
+	#$('#parent_id').children(':not(#id_n)').remove();entry-content
+	browser.execute_script("var p = document.getElementById('wrapper'); var d = document.getElementsByClassName('entry-content')[0]; p.innerHTML = '';p.appendChild(d);");
+	#print(browser.evaluate_script("$('#parent_id').children(':not(#id_n)').remove();"))
+	
+kbbHomePage()
 		
