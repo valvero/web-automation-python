@@ -1,4 +1,5 @@
 from splinter import Browser
+import time
 
 # use 'global' keyword to access a global variable (see link checker)
 
@@ -21,13 +22,22 @@ def demo():
 	else:
 		print("No, it wasn't found... We need to improve our SEO techniques")
 
-def kbbHomePage():
+def cleanPageTest():
 	global browser
 	url = "http://horriblesubs.info/"
 	browser.visit(url)
 	#$('#parent_id').children(':not(#id_n)').remove();entry-content
 	browser.execute_script("var p = document.getElementById('wrapper'); var d = document.getElementsByClassName('entry-content')[0]; p.innerHTML = '';p.appendChild(d);");
 	#print(browser.evaluate_script("$('#parent_id').children(':not(#id_n)').remove();"))
+
+def videoTest():
+	global browser
+	browser.visit("http://www.kbb.com/honda/civic/2016/#survey")
+	#browser.is_text_present('splinter', wait_time=10) # True, using wait_time
+	time.sleep(2) 
+	playButton = browser.find_by_css('.tile-img').first
+	playButton.click()
 	
-kbbHomePage()
+#http://www.kbb.com/honda/civic/2016/	
+videoTest()
 		

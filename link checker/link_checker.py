@@ -3,6 +3,7 @@
 #response = input("Press any key to continue.")
 #python -m pip install SomePackage
 #print("This link is ok: %s" % link)
+#python -m PyInstaller --onefile <fileName>
 import requests
 import threading
 import os
